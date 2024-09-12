@@ -1,0 +1,196 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Awareness and Demand Infographic</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #e0f2f1;
+      }
+      .infographic {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        background-color: #b2dfdb;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .center-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background-color: #00897b;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        z-index: 2;
+      }
+      .icon {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #004d40;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+      .icon.active {
+        transform: scale(1.2);
+        background-color: #00695c;
+      }
+      #content-display {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 180px;
+        height: 180px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        z-index: 3;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .farmer-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .farmer-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="infographic">
+      <div class="center-circle">Awareness and Demand</div>
+      <div id="content-display"></div>
+    </div>
+
+    <script>
+      const icons = [
+        {
+          name: "Vision",
+          angle: 0,
+          description: "Strategic vision and goals",
+          color: "#1565c0",
+        },
+        {
+          name: "Briefcase",
+          angle: 45,
+          description: "Business opportunities",
+          color: "#00838f",
+        },
+        {
+          name: "Options",
+          angle: 90,
+          description: "Multiple options and choices",
+          color: "#2e7d32",
+        },
+        {
+          name: "Idea",
+          angle: 135,
+          description: "Innovative ideas and solutions",
+          color: "#f9a825",
+        },
+        {
+          name: "Document",
+          angle: 180,
+          description: "Documentation and records",
+          color: "#6a1b9a",
+        },
+        {
+          name: "Chart",
+          angle: 225,
+          description: "Data analysis and reporting",
+          color: "#d84315",
+        },
+        {
+          name: "Network",
+          angle: 270,
+          description: "Networking and collaboration",
+          color: "#4e342e",
+        },
+        {
+          name: "Money",
+          angle: 315,
+          description: "Financial aspects and funding",
+          color: "#37474f",
+        },
+      ];
+
+      const infographic = document.querySelector(".infographic");
+      const contentDisplay = document.getElementById("content-display");
+
+      icons.forEach((icon) => {
+        const iconElement = document.createElement("div");
+        iconElement.className = "icon";
+        iconElement.innerHTML = icon.name[0];
+        const angle = icon.angle * (Math.PI / 180);
+        const radius = 220;
+        iconElement.style.left = `${250 + radius * Math.cos(angle) - 25}px`;
+        iconElement.style.top = `${250 + radius * Math.sin(angle) - 25}px`;
+
+        iconElement.addEventListener("click", (e) => {
+          // Remove active class from all icons
+          document
+            .querySelectorAll(".icon")
+            .forEach((el) => el.classList.remove("active"));
+
+          // Add active class to clicked icon
+          iconElement.classList.add("active");
+
+          // Change icon color
+          iconElement.style.backgroundColor = icon.color;
+
+          // Display content
+          contentDisplay.innerHTML = `<strong>${icon.name}</strong><br>${icon.description}`;
+          contentDisplay.style.opacity = "1";
+        });
+
+        infographic.appendChild(iconElement);
+      });
+
+      // Close content display when clicking outside
+      infographic.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("icon")) {
+          contentDisplay.style.opacity = "0";
+          document.querySelectorAll(".icon").forEach((el) => {
+            el.classList.remove("active");
+            el.style.backgroundColor = "#004d40";
+          });
+        }
+      });
+    </script>
+  </body>
+</html> -->
