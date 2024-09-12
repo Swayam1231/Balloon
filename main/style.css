@@ -7,7 +7,7 @@
 
         margin: 0;
         font-family: Arial, sans-serif;
-        background-image: url(img/backen.png);
+        background-image: url(/img/backen.png);
         background-repeat: no-repeat;
       }
       .navbar {
