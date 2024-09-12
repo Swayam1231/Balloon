@@ -1,11 +1,9 @@
-/* div {
-        width: 10000px;
-      } */
+
       body {
         width: 6000px;
         height: 100%;
-        padding: 0px;
-        overflow: hidden;
+        padding: 0px; 
+        /* overflow: hidden;  */
 
         margin: 0;
         font-family: Arial, sans-serif;
@@ -14,16 +12,44 @@
       }
 
 
-/* #town {
-  width: 100vw;
-  height: 100vh;
-  background: url('day-town.jpg') no-repeat center center;
-  background-size: cover;
-  transition: background 1s ease;
-  position: relative;
-} */
+h1{
+  display: flex;
+  align-items: center;
+  font-family: cursive;
+  
+}
+.veiw{
+  justify-content: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: auto;
+  font-weight: 600;
+  min-width: 200px;
 
-/* Balloon styling */
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.box{
+  font-size: 1em;
+
+  font-family: cursive;
+  border:2px solid black;
+  display: flex;
+  align-items: center;
+  animation: slideIn 6s ease-out forwards;
+  height: 125px;
+  width: 350px;
+}
 #balloon {
   width: 50px;
   height: 80px;
@@ -36,11 +62,11 @@
   transition: transform 0.1s ease;
 }
 
-/* Night background */
-/* .night {
-  background: url('night-town.jpg') no-repeat center center;
-  background-size: cover;
-} */
+h1{
+  text-decoration-line: underline;
+  text-shadow: 100px;
+  animation: slideIn 1s ease-out ;
+}
 
       .navbar {
         background-color: transparent;
@@ -61,7 +87,7 @@
         padding: 1rem;
       }
       .logo {
-        color: black;
+        color: rgb(0, 0, 0);
         height: 100px;
 
         font-size: 1.5rem;
@@ -83,14 +109,14 @@
       .menu-icon {
         display: none;
         color: black;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         cursor: pointer;
       }
       #menu-toggle {
         display: none;
       }
       .content {
-        margin-top: 60px; /* Adjust based on your navbar height */
+        margin-top: 60px; 
         padding: 20px;
       }
       @media (max-width: 768px) {
