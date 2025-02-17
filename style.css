@@ -10,6 +10,45 @@
         /* background-image: url(img/background.mp4); */
         background-repeat: no-repeat;
       }
+/* Add a custom font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Indie+Flower&display=swap');
+
+
+/* Optional: Add hover effect to the boxes */
+/* Add a custom font */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab:wght@400;700&display=swap');
+
+/* Ensure the content area is positioned relatively */
+.content {
+    position: relative;
+    height: 100vh; /* Ensure the content area takes up the full viewport height */
+    overflow: hidden; /* Prevent boxes from overflowing */
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Apply the custom font and style to the text boxes */
+.box {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer; /* Optional: Add pointer cursor for interactivity */
+}
+
+/* Optional: Add hover effect to the boxes */
+.box:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 /* Ensure the video covers the entire viewport */
 .video-background {
@@ -90,7 +129,7 @@ h1{
     opacity: 1;
   }
 }
-.box{
+/* .box{
   font-size: 1em;
 
   font-family: cursive;
@@ -100,7 +139,7 @@ h1{
   animation: slideIn 6s ease-out forwards;
   height: 125px;
   width: 350px;
-}
+} */
 #balloon {
   width: 50px;
   height: 80px;
@@ -193,4 +232,13 @@ h1{
       }
       .hidden {
         transform: translateX(-100%);
+      }
+      .nav-links a {
+        color: white; /* Change this to white */
+        text-decoration: none;
+      }
+
+      .about-us-link {
+        color: white;
+        text-decoration: none;
       }

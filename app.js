@@ -22,3 +22,48 @@ let lastScrollX = 0;
         }
         lastScrollX = curScrollX;
       });
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const boxes = document.querySelectorAll('.box');
+        const content = document.querySelector('.content');
+    
+        // Function to check if two boxes overlap
+        function isOverlapping(box1, box2) {
+            const rect1 = box1.getBoundingClientRect();
+            const rect2 = box2.getBoundingClientRect();
+    
+            return !(
+                rect1.right < rect2.left ||
+                rect1.left > rect2.right ||
+                rect1.bottom < rect2.top ||
+                rect1.top > rect2.bottom
+            );
+        }
+    
+        // Function to place boxes without overlapping
+        function placeBoxes() {
+            const placedBoxes = [];
+    
+            boxes.forEach(box => {
+                let randomX, randomY;
+                let overlap;
+                const contentWidth = content.offsetWidth;
+                const contentHeight = content.offsetHeight;
+                const boxWidth = box.offsetWidth;
+                const boxHeight = box.offsetHeight;
+    
+                do {
+                    randomX = Math.floor(Math.random() * (contentWidth - boxWidth));
+                    randomY = Math.floor(Math.random() * (contentHeight - boxHeight));
+                    box.style.left = `${randomX}px`;
+                    box.style.top = `${randomY}px`;
+    
+                    overlap = placedBoxes.some(placedBox => isOverlapping(box, placedBox));
+                } while (overlap);
+    
+                placedBoxes.push(box);
+            });
+        }
+    
+        placeBoxes();
+    });
